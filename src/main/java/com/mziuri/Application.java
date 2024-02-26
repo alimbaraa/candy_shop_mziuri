@@ -12,7 +12,6 @@ import java.io.File;
 public class Application {
 
     public static void main(String[] args) throws LifecycleException {
-
         Tomcat tomcat = new Tomcat();
         tomcat.enableNaming();
         tomcat.setPort(8989);
@@ -31,5 +30,4 @@ public class Application {
         tomcat.getServer().await();
 
     }
-
 }
