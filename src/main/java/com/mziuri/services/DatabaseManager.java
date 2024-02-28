@@ -24,6 +24,13 @@ public class DatabaseManager {
     private final CriteriaBuilder cb = entityManager.getCriteriaBuilder();;
     private final CriteriaQuery<Product> cqProd = cb.createQuery(Product.class);
 
+    public void addProductInDatabase(Product product){
+        entityManager.persist(product);
+
+        entityManager.close();
+        factory.close();
+    }
+
     public List<Product> getProductsList(List<Product> list){ //productebis siis migeba
         Root<Product> products = cqProd.from(Product.class);
         cqProd.select(products);
