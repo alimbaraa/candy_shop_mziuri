@@ -34,5 +34,12 @@ var response = await fetch(url , {
 } else {
 alert("the list hasn't been sent");
 }
-
 }
+
+
+document.getElementById("sneakers_button").addEventListener("click", function () {
+var newDiv = document.createElement("div");
+newDiv.textContent = "sneakers";
+
+document.getElementById("container").appendChild(newDiv);
+});

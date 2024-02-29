@@ -19,23 +19,15 @@ public class ProductServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException { //productebis shesaxeb informaciis migeba
-        String name = req.getParameter("name");
-        float price = Float.parseFloat(req.getParameter("price"));
-        Integer amount = Integer.valueOf(req.getParameter("amount"));
-
-
         DatabaseManager dbManager = new DatabaseManager();
-        GetProductInfoResponse productInfoResponse = new GetProductInfoResponse(name, price, amount);
+        GetProductInfoResponse productInfoResponse = new GetProductInfoResponse();
         dbManager.findProductWithName(req, resp, productInfoResponse, dbManager);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String name = req.getParameter("name");
-        Integer amount = Integer.valueOf(req.getParameter("amount"));
-
         DatabaseManager dbManager = new DatabaseManager();
-        PurchaseRequest purchaseRequest = new PurchaseRequest(name, amount);
+        PurchaseRequest purchaseRequest = new PurchaseRequest();
         dbManager.purchaseProduct(req, resp, purchaseRequest, dbManager);
     }
 

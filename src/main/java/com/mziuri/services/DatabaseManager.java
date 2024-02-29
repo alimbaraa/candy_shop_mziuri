@@ -46,7 +46,7 @@ public class DatabaseManager {
         String name = req.getParameter("name");
 
         Root<Product> products = cqProd.from(Product.class);
-        cqProd.where(cb.equal(products.get("prod_name"), name));
+        cqProd.where(cb.equal(products.get("name"), name));
         cqProd.select(products);
 
         var select = cqProd.select(products);
@@ -83,6 +83,7 @@ public class DatabaseManager {
                     String result = mapper.writeValueAsString(purchaseRequest);
 
                     resp.getWriter().write(result);
+                    resp.getWriter().write("bought");
                 } else {
                     resp.getWriter().write(405);
                 }

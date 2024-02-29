@@ -9,6 +9,10 @@ public class PurchaseRequest {
         this.amount = amount;
     }
 
+    public PurchaseRequest() {
+
+    }
+
     public String getName() {
         return name;
     }

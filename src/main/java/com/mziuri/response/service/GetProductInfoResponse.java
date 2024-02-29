@@ -11,6 +11,10 @@ public class GetProductInfoResponse {
         this.amount = amount;
     }
 
+    public GetProductInfoResponse() {
+
+    }
+
     public String getName() {
         return name;
     }
